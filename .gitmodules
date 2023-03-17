@@ -4,3 +4,6 @@
 [submodule "container-dotfiles"]
 	path = container-dotfiles
 	url = https://github.com/brav0charlie/container-dotfiles
+[submodule "ubuntu-base-arm64/container-dotfiles"]
+	path = ubuntu-base-arm64/container-dotfiles
+	url = https://github.com/brav0charlie/container-dotfiles.git
