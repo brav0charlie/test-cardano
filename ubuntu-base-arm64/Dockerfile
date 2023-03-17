@@ -21,14 +21,11 @@ ARG GROUPID="1000"
 RUN groupadd -g $GROUPID -r $USERNAME \
  && useradd --no-log-init -r --gid $GROUPID -u $USERID $USERNAME \
  && mkdir /home/$USERNAME
-COPY ./shared-terminal-settings/dotfiles /home/${USERNAME}/dotfiles
-COPY ./zshrc /home/${USERNAME}/.zshrc
+COPY ./container-dotfiles/zshrc /home/${USERNAME}/.zshrc
+COPY ./container-dotfiles /home/${USERNAME}/.dotfiles
 RUN chown -R ${USERNAME}:${USERNAME} /home/${USERNAME} \
  && chown -R ${USERNAME}:${USERNAME} /usr/local \
  && echo ${USERNAME}:${USERNAME} | chpasswd \
  && chsh -s /usr/bin/zsh ${USERNAME}
 USER ${USERNAME}
 ENV HOME="/home/lovelace"
-
-# Install and setup environment for default user
-RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
