@@ -28,6 +28,7 @@ RUN chown -R ${USERNAME}:${USERNAME} /home/${USERNAME} \
  && echo ${USERNAME}:${USERNAME} | chpasswd \
  && chsh -s /usr/bin/zsh ${USERNAME}
 USER ${USERNAME}
+ENV HOME="/home/lovelace"
 
 # Install and setup environment for default user
 RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

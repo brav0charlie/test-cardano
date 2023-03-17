@@ -126,6 +126,9 @@ RUN python3 -m pip install --upgrade pip \
 EXPOSE 9100
 EXPOSE 12798
 
+# Set $HOME
+ENV HOME="/home/lovelace"
+
 # Set cardano-node as the entrypoint and by default just print the version.
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["--version"]
