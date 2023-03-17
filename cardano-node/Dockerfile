@@ -64,6 +64,7 @@ ARG TAG=1.35.6
 ARG ARCH="aarch64"
 RUN git clone https://github.com/input-output-hk/cardano-node.git \
  && cd cardano-node \
+ && cabal update \
  && git fetch --all --recurse-submodules --tags \
  && git tag && git checkout tags/$TAG \
  && echo "with-compiler: ghc-8.10.7" >>  cabal.project.local \
