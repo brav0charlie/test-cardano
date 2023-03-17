@@ -60,7 +60,7 @@ RUN git clone https://github.com/bitcoin-core/secp256k1 \
 
 # Build and install cardano node
 WORKDIR /opt
-ARG TAG=1.35.3
+ARG TAG=1.35.6
 ARG ARCH="aarch64"
 RUN git clone https://github.com/input-output-hk/cardano-node.git \
  && cd cardano-node \
