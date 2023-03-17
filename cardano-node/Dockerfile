@@ -99,7 +99,7 @@ RUN wget https://github.com/prometheus/node_exporter/releases/download/v$VERSION
  && mv $DIRNAME/node_exporter /usr/local/bin
 
 # Build the final stage and copy the build artifacts from the previous stage.
-FROM registry:5000/ubuntu-base-arm64:latest
+FROM localhost:5000/ubuntu-base-arm64:latest
 COPY --from=build /usr/local/lib/libsodium* /usr/local/lib/
 COPY --from=build /usr/local/lib/libsecp256k1* /usr/local/lib/
 COPY --from=build /opt/bin/cardano-cli /usr/local/bin/
