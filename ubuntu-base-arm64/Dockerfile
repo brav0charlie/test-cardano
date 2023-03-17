@@ -1,6 +1,7 @@
 FROM arm64v8/ubuntu:latest
 LABEL maintainer="Bill Clark (bill@billclark.io)"
 
+# Install preferred packages
 RUN apt-get update \
  && apt-get install -y \
     zsh \
@@ -14,7 +15,7 @@ RUN apt-get update \
     nano \
  && rm -rf /var/lib/apt/lists/*
 
-# Set up locales
+# Set up locale (prevents error when using ZSH powerline fonts)
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y locales \
     && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
