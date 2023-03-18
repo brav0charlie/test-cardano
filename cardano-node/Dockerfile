@@ -73,7 +73,8 @@ RUN git clone https://github.com/input-output-hk/cardano-node.git \
  && cabal build -j16 all \
  && mkdir /opt/bin/ \
  && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-node-$TAG/x/cardano-node/build/cardano-node/cardano-node /opt/bin/ \
- && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-cli-$TAG/x/cardano-cli/build/cardano-cli/cardano-cli /opt/bin/
+ && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-cli-$TAG/x/cardano-cli/build/cardano-cli/cardano-cli /opt/bin/ \
+ && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-cli-$TAG/x/cardano-cli/build/cardano-submit-api/cardano-submit-api /opt/bin/
 
 # Install Rust
 WORKDIR /opt
