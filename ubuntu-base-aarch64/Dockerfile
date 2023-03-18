@@ -1,5 +1,6 @@
 FROM arm64v8/ubuntu:latest
 LABEL maintainer="Bill Clark (bill@billclark.io)"
+LABEL github_url="https://github.com/brav0charlie/test-cardano"
 
 # Install preferred packages
 RUN apt-get update \
