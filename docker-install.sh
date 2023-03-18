@@ -9,7 +9,7 @@ color_off='\033[0m'               # End Text Coloring
 INFO="[${Blue}INFO${color_off}]"  # INFO tag
 
 # Environment Info
-echo "$INFO This script was developed on Ubuntu 22.04.2 LTS"
+echo "$INFO This script was tested on Ubuntu 22.04.2 LTS"
 echo "$INFO You are currently running: $(head -1 /etc/os-release | cut -d "\"" -f 2)"
 
 # Move to current user home directory, where installation files will be hosted
