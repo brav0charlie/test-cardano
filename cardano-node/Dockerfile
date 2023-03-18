@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y \
     autoconf \
     liblmdb-dev \
     libnuma-dev \
+    libnuma1 \
     llvm \
     curl
 
@@ -104,7 +105,7 @@ RUN wget https://github.com/prometheus/node_exporter/releases/download/v$VERSION
     && mv $DIRNAME/node_exporter /usr/local/bin
 
 # Build the final stage and copy the build artifacts from the previous stage.
-FROM ghcr.io/brav0charlie/ubuntu-base-aarch64:latest
+FROM ghcr.io/brav0charlie/ubuntu-base-arm64:latest
 COPY --from=build /usr/local/lib/libsodium* /usr/local/lib/
 COPY --from=build /usr/local/lib/libsecp256k1* /usr/local/lib/
 COPY --from=build /opt/bin/cardano-cli /usr/local/bin/
