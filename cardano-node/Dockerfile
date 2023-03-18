@@ -63,6 +63,7 @@ RUN git clone https://github.com/bitcoin-core/secp256k1 \
 # Build and install cardano node
 WORKDIR /opt
 ARG TAG=1.35.6
+ARG API_TAG=3.1.2
 ARG ARCH="aarch64"
 RUN git clone https://github.com/input-output-hk/cardano-node.git \
  && cd cardano-node \
@@ -74,7 +75,7 @@ RUN git clone https://github.com/input-output-hk/cardano-node.git \
  && mkdir /opt/bin/ \
  && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-node-$TAG/x/cardano-node/build/cardano-node/cardano-node /opt/bin/ \
  && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-cli-$TAG/x/cardano-cli/build/cardano-cli/cardano-cli /opt/bin/ \
- && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-cli-$TAG/x/cardano-cli/build/cardano-submit-api/cardano-submit-api /opt/bin/
+ && cp -p dist-newstyle/build/$ARCH-linux/ghc-8.10.7/cardano-submit-api-$API_TAG/x/cardano-submit-api/build/cardano-submit-api/cardano-submit-api /opt/bin/
 
 # Install Rust
 WORKDIR /opt
