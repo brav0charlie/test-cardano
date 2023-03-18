@@ -1,7 +1,7 @@
 FROM arm64v8/ubuntu:latest AS build
 LABEL maintainer="Bill Clark (bill@billclark.io)"
-LABEL github_url="https://github.com/brav0charlie/cardano-node-arm64"
-LABEL org.opencontainers.image.source https://github.com/brav0charlie/cardano-node-arm64
+LABEL github_url="https://github.com/brav0charlie/cardano-node-aarch64"
+LABEL org.opencontainers.image.source https://github.com/brav0charlie/cardano-node-aarch64
 
 # Update and install the required packages
 ARG DEBIAN_FRONTEND=noninteractive
