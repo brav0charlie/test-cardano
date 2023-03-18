@@ -1,6 +1,6 @@
 FROM arm64v8/ubuntu:latest AS build
 LABEL maintainer="Bill Clark (bill@billclark.io)"
-LABEL github_url="https://github.com/brav0charlie/test-cardano"
+LABEL github_url="https://github.com/brav0charlie/docker-cardano-node"
 
 # Update and install the required packages
 ARG DEBIAN_FRONTEND=noninteractive
